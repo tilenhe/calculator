@@ -5,6 +5,7 @@ const btnOperator = document.querySelectorAll(".operator");
 const btnOperate = document.querySelector(".operate");
 const btnClear = document.getElementById("clear");
 const btnDot = document.getElementById(".");
+const btnBack = document.getElementById("back");
 
 let operator;
 let a;
@@ -20,6 +21,15 @@ btnOperator.forEach(button => button.addEventListener("click", getOperator));
 btnOperate.addEventListener("click", equals);
 btnClear.addEventListener("click", clear);
 btnDot.addEventListener("click", addDot);
+btnBack.addEventListener("click", removeCharacter);
+
+function removeCharacter() {
+  if (displayDiv.innerText !== "") {
+    let str = displayDiv.innerText;
+    displayDiv.innerText = str.slice(0, -1);
+    console.log("removed char");
+  }
+}
 
 function addDot() {
   let str = displayDiv.innerText;

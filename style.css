@@ -47,3 +47,13 @@
     grid-column: 1 /4;
 
 }
+
+#back,
+#clear {
+    height: 48%;
+    width: 100%;
+}
+
+#clear {
+    margin-top: 0.2rem;
+}
