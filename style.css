@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Orbitron, sans-serif;
+}
+
+.wrapper {
+    display: grid;
+    margin: 2rem auto;
+    width: 300px;
+    height: 400px;
+    grid-template: repeat(5, 1fr) / repeat(4, 1fr);
+    gap: 0.2rem;
+}
+
+.btn {
+    background-color: lightgray;
+    border: none;
+    font-size: 1.5rem;
+}
+
+.operator {
+    color: white;
+    background-color: dimgray;
+}
+
+.operate {
+    color: white;
+    background-color: dimgray;
+}
+
+.display {
+
+    text-align: end;
+    font-size: 2rem;
+    margin-top: 5px;
+
+}
+
+.secondary-display {
+    text-align: end;
+    height: 1rem;
+}
+
+.big-display {
+    grid-column: 1 /4;
+
+}
