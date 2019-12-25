@@ -28,6 +28,7 @@ function removeCharacter() {
     let str = displayDiv.innerText;
     displayDiv.innerText = str.slice(0, -1);
     console.log("removed char");
+    a = displayDiv.innerText;
   }
 }
 
@@ -63,22 +64,26 @@ function displayNum(e) {
 function getOperator(e) {
   if (e.target.className == "btn operator") {
     operator = e.target.id;
-    secondaryDisplayDiv.innerText = displayDiv.innerText + `${operator}`;
+    secondaryDisplayDiv.innerText = displayDiv.innerText + " " + `${operator}`;
     displayDiv.innerText = "";
   }
 }
 function equals() {
-  secondaryDisplayDiv.innerText += displayDiv.innerText;
+  if (operator == undefined) {
+    console.log("operator not defined");
+  } else {
+    secondaryDisplayDiv.innerText += " " + displayDiv.innerText;
 
-  a = Number(a);
-  b = Number(b);
+    a = Number(a);
+    b = Number(b);
 
-  operate(operator, a, b);
-  result = Math.round(result * 100) / 100;
-  displayDiv.innerText = result;
-  operator = undefined;
-  a = result;
-  b = "";
+    operate(operator, a, b);
+    result = Math.round(result * 100) / 100;
+    displayDiv.innerText = result;
+    operator = undefined;
+    a = result;
+    b = "";
+  }
 }
 
 function add(a, b) {
